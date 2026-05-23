@@ -1,3 +1,25 @@
 <resources>
     <string name="app_name">Coffee Finder App Assignment</string>
+    <string name="tvTitle">Coffee Finder App</string>
+
+    <string name="tvShopOneName">Our Town Roast</string>
+    <string name="tvShopOneAddress">74 Town Square, Lima, Ohio 45801</string>
+    <string name="tvShopOneURL">https://ourtownroast.com/</string>
+    <string name="ivShopOneLogoDescription">Our Town Roast Logo</string>
+
+    <string name="tvShopTwoName">Vibe Coffeehouse and Cafe</string>
+    <string name="tvShopTwoAddress">311 East Market Street, Lima, Ohio 45801</string>
+    <string name="tvShopTwoURL">https://vibecoffeehouse.com/</string>
+    <string name="ivShopTwoLogoDescription">Vibe Coffeehouse and Cafe Logo</string>
+
+    <string name="tvShopThreeName">Dunkin’</string>
+    <string name="tvShopThreeAddress">751 N Cable Rd, Lima, OH 45805</string>
+    <string name="tvShopThreeURL">https://www.dunkindonuts.com/en</string>
+    <string name="ivShopThreeLogoDescription">Dunkin’ Logo</string>
+
+    <string name="tvShopFourName">The Meeting Place on Market</string>
+    <string name="tvShopFourAddress">220 W. Market Street, Lima, OH 45801</string>
+    <string name="tvShopFourURL">https://meetingplaceonmarket.com/</string>
+    <string name="ivShopFourLogoDescription">The Meeting Place on Market Logo</string>
+
 </resources>
