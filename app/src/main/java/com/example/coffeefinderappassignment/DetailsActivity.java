@@ -11,6 +11,8 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.core.graphics.Insets;
 import androidx.core.view.ViewCompat;
 import androidx.core.view.WindowInsetsCompat;
+import android.content.Intent;
+import android.net.Uri;
 
 public class DetailsActivity extends AppCompatActivity {
 
@@ -81,5 +83,12 @@ public class DetailsActivity extends AppCompatActivity {
                 selectedUrl = "https://www.google.com/maps";
                 break;
         }
+
+        btnOpenWebsite.setOnClickListener(v -> {
+            if (!selectedUrl.isEmpty()) {
+                Intent intent = new Intent(Intent.ACTION_VIEW, Uri.parse(selectedUrl));
+                startActivity(intent);
+            }
+        });
     }
 }
