@@ -12,9 +12,11 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.CoffeeFinderAppAssignment"
         tools:targetApi="31">
+        <!-- Internal-only screen, opened from MainActivity via explicit intent. -->
         <activity
             android:name=".DetailsActivity"
             android:exported="false" />
+        <!-- Launcher activity and app entry point. -->
         <activity
             android:name=".MainActivity"
             android:exported="true">

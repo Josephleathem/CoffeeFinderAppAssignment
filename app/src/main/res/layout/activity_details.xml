@@ -9,6 +9,7 @@
     android:padding="16dp"
     tools:context=".DetailsActivity">
 
+    <!-- Selected shop name injected by DetailsActivity. -->
     <TextView
         android:id="@+id/tvShopName"
         android:layout_width="0dp"
@@ -20,6 +21,7 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
+    <!-- Selected shop address injected by DetailsActivity. -->
     <TextView
         android:id="@+id/tvAddress"
         android:layout_width="0dp"
@@ -31,6 +33,10 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@id/tvShopName" />
 
+    <!--
+         Shop logo/photo area.
+         The 16:9 ratio keeps image proportions consistent across device sizes.
+    -->
     <ImageView
         android:id="@+id/ivShopImage"
         android:layout_width="0dp"
@@ -44,6 +50,7 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@id/tvAddress" />
 
+    <!-- Opens the selected shop URL in an external browser/app. -->
     <Button
         android:id="@+id/btnOpenWebsite"
         android:layout_width="0dp"

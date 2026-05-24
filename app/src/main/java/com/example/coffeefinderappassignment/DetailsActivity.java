@@ -14,6 +14,13 @@ import androidx.core.view.WindowInsetsCompat;
 import android.content.Intent;
 import android.net.Uri;
 
+/**
+ * Detail screen that renders coffee shop content based on the incoming "shopIndex" extra.
+ *
+ * Data contract:
+ * MainActivity sends an integer index, and this activity maps that index to
+ * shop name/address/logo/website resources.
+ */
 public class DetailsActivity extends AppCompatActivity {
 
     private TextView tvShopName;
@@ -21,6 +28,7 @@ public class DetailsActivity extends AppCompatActivity {
     private ImageView ivShopImage;
     private Button btnOpenWebsite;
 
+    // URL associated with the selected shop; used by the website button click handler.
     private String selectedUrl = "";
 
     @Override
@@ -45,8 +53,10 @@ public class DetailsActivity extends AppCompatActivity {
         ivShopImage = findViewById(R.id.ivShopImage);
         btnOpenWebsite = findViewById(R.id.btnOpenWebsite);
 
+        // Default -1 means the extra was missing; this falls through to the safe default case.
         int shopIndex = getIntent().getIntExtra("shopIndex", -1);
 
+        // Index mapping must stay in sync with MainActivity.coffeeShops ordering.
         switch (shopIndex) {
             case 0:
                 tvShopName.setText(R.string.tvShopOneName);
@@ -77,6 +87,7 @@ public class DetailsActivity extends AppCompatActivity {
                 break;
 
             default:
+                // Defensive fallback for unexpected or missing index values.
                 tvShopName.setText("Unknown Coffee Shop");
                 tvAddress.setText("Address not available");
                 ivShopImage.setImageResource(R.drawable.ic_launcher_foreground);
@@ -85,6 +96,7 @@ public class DetailsActivity extends AppCompatActivity {
         }
 
         btnOpenWebsite.setOnClickListener(v -> {
+            // Launches external browser/app that can handle the provided URL.
             if (!selectedUrl.isEmpty()) {
                 Intent intent = new Intent(Intent.ACTION_VIEW, Uri.parse(selectedUrl));
                 startActivity(intent);

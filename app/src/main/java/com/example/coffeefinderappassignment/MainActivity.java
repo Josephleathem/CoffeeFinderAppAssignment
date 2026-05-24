@@ -12,6 +12,13 @@ import androidx.core.graphics.Insets;
 import androidx.core.view.ViewCompat;
 import androidx.core.view.WindowInsetsCompat;
 
+/**
+ * Entry screen that lists coffee shops and routes the user to the details screen.
+ *
+ * Contract note:
+ * The clicked list position is passed as the "shopIndex" extra to DetailsActivity,
+ * where that index is used to select strings/images.
+ */
 public class MainActivity extends AppCompatActivity {
 
     @Override
@@ -31,6 +38,7 @@ public class MainActivity extends AppCompatActivity {
             return insets;
         });
 
+        // Keep this order aligned with the switch cases in DetailsActivity.
         String[] coffeeShops = {
                 "Our Town Roast",
                 "Vibe Coffeehouse and Cafe",
@@ -47,6 +55,7 @@ public class MainActivity extends AppCompatActivity {
         listCoffeeShops.setAdapter(adapter);
 
         listCoffeeShops.setOnItemClickListener((parent, view, position, id) -> {
+            // Navigate by explicit class name and pass the selected row index.
             Intent intent = new Intent();
             intent.setClassName(this, getPackageName() + ".DetailsActivity");
             intent.putExtra("shopIndex", position);
